@@ -12,12 +12,11 @@ ms.author: sepenet
 
 # Cost optimisation check list 
 
-## AWS
 
 ## Checklist 
 |#|Guidance  |Cost Optimisation Impact  |Complexity to implement |
 |-|---------|---------|---------|
-|1|Purchase Azure Reservation, Purchase RI not only for VMS : AKS, Managed DBs, Storage (5%), Capacity |Tier for Log Analytics, Sentinel, etc.|HIGH|MEDIUM|
+|1|Purchase **Azure Reservation**, Purchase RI not only for VMS : AKS, Managed DBs, Storage (5%),  Purchase **Reserve Capacity** Tier for Log Analytics, Sentinel, etc.|HIGH|MEDIUM|
 |2|Microsoft workloads : AHUB + Dev&Test subscriptions , SQL : Developer License/Managed Instances|HIGH|LOW|
 |3|Rightsizing VMs / Upgrade instances to the latest generation, B-Series|MEDIUM|MEDIUM|
 |4|Terminate zombie resources: Delete unused VMs, Delete unattached storage volumes, Release unattached Elastic IP addresses|MEDIUM|MEDIUM|
@@ -42,10 +41,27 @@ The above lines are the exhibit of the official online documentation available [
 - VM reservation is tied to a VM series  
 > [!NOTE]
 > Reservation purchased for ES series VMs don't apply to E series VMs, and vice-versa.
-- 
+ 
 
 ### How to 
-- Virtual machines  
-Azure advisor is the easiest way to identify reserve instance to buy  
+Determine what to purchase with 
+- Azure advisor virtual machines only 
+- Reservation purchase experience in the Azure portal
+- Cost Management Power BI app
+- APIs
+
+Azure advisor is the easiest way to identify **virtual machine** reserve instance to buy  
 https://ms.portal.azure.com/#blade/Microsoft_Azure_Expert/AdvisorMenuBlade/Cost
 ![](media/cost-optimisation-checklist/RIAdvisor.png)
+
+### Reconmmendations and best practices
+- VM standardization should be pushed to simplify the azure VM reservation adoption. 
+- VM shared scope should used to maximise utilisation, details of scope [here](https://docs.microsoft.com/en-us/azure/cost-management-billing/reservations/prepare-buy-reservation#scope-reservations)
+
+### Pain points and difficulties
+- Charge back to line of business  
+In case the azure reservation are bought centrally and assigned to a shared scope subscription, charge back process could be very complex.   
+VM Reservation Instance (RI) are assigned randomly to any suitable VM and can flip from one VM to another multiple times during a day.  
+Distribution of discount can be them very complex if you want all the lines of business to benefit from the same.  
+EG: if you have 3 identicals VMs in 3 subscriptions, and 2 Reservations VMs on day 1 it could be assigned to VM1 and VM3 and day 2 to VM1 and VM2, and day 3  
+![](media/view-reservations/RI-chargeback-example.png)
