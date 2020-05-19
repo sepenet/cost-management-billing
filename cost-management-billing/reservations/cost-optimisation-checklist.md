@@ -16,7 +16,7 @@ ms.author: sepenet
 ## Checklist 
 |#|Guidance  |Cost Optimisation Impact  |Complexity to implement |
 |-|---------|---------|---------|
-|1|Purchase **Azure Reservation**, Purchase RI not only for VMS : AKS, Managed DBs, Storage (5%),  Purchase **Reserve Capacity** Tier for Log Analytics, Sentinel, etc.|HIGH|MEDIUM|
+|1|Purchase **Azure Reservation**, for VMs, Redis cache, Managed DBs, app Service, ...,  Purchase **Reserve Capacity**  Storage, Tier for Log Analytics, Sentinel, ...|HIGH|MEDIUM|
 |2|Microsoft workloads : AHUB + Dev&Test subscriptions , SQL : Developer License/Managed Instances|HIGH|LOW|
 |3|Rightsizing VMs / Upgrade instances to the latest generation, B-Series|MEDIUM|MEDIUM|
 |4|Terminate zombie resources: Delete unused VMs, Delete unattached storage volumes, Release unattached Elastic IP addresses|MEDIUM|MEDIUM|
