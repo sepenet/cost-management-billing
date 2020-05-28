@@ -86,3 +86,18 @@ EG: if you have 3 identicals VMs in 3 subscriptions, and 2 Reservations VMs, on 
 - **refund and repurchase** new reservation: the new purchase total should equal or be greater than the returned amount
     > [!NOTE]
     > all the exchange and refund policies information can be found [here](https://docs.microsoft.com/en-us/azure/cost-management-billing/reservations/exchange-and-refund-azure-reservations#cancel-exchange-and-refund-policies). 
+
+## Microsoft workloads : AHUB + Dev&Test subscriptions , SQL : Developer License/Managed Instances
+
+### Why 
+#### Azure Hybrid Benefit (AHB) 
+The Azure Hybrid Benefit (AHB) is a pricing benefit for customers who **have licenses with Software Assurance**, which helps maximize the value of existing on-premises Windows Server and/or SQL Server license investments when migrating to Azure.
+
+Eligible customers can save up:
+- to 40%* on Azure Virtual Machines (infrastructure as a service, or IaaS),
+- to 55% on Azure SQL Database (platform as a service, or PaaS) and SQL Server on Azure Virtual Machines (IaaS) with Azure Hybrid Benefit, which increases to up to 80% when combined with Azure Reserved Instances.
+
+Several considerations before using AHB,
+	- Customer own eligible SQL Server and/or Windows Server licenses with active Software Assurance or the equivalent qualifying subscription licenses
+
+https://azure.microsoft.com/en-us/pricing/hybrid-benefit/
