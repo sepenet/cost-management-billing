@@ -17,6 +17,7 @@ all is described [here](https://docs.microsoft.com/en-us/contribute/get-started-
 git clone https://github.com/sepenet/cost-management-billing.git
 ```
 - Configure the remote upstream  
+Change directory to cost-management-billing
 ```bash
 git remote add upstream https://github.com/sepenet/cost-management-billing.git
 git fetch upstream
