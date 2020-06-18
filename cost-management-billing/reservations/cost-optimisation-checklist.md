@@ -227,7 +227,7 @@ Cost per resource per month (Azure Cost Management / Azure Graph / Azure Advisor
 - Zombie VM's are virtual machines that were provisioned and for one reason unintentionally not used. This can be due to stalled or abandoned projects or even incomplete decommissioning procedures. Despite being unused, Zombie VM's continue to eat valuable Compute, Memory, Storage, and even Network resources costing organizations money and exposing unnecessary security risks.
 
 ### How to 
-- Use Azure Advisor to track unused Public IP addresses or Unattached storage - https://docs.microsoft.com/en-us/azure/advisor/advisor-cost-recommendations $$CDUtest : +VM and Storage  
+- Use Azure Advisor to track unused Public IP addresses or Unattached storage - https://docs.microsoft.com/en-us/azure/advisor/advisor-cost-recommendations $$CDUtest2 : +VM and Storage  
 ![](media/cost-optimisation-checklist/advisorZombie.png)
 
 ### Pitfalls 
