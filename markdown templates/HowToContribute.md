@@ -16,8 +16,8 @@ all is described [here](https://docs.microsoft.com/en-us/contribute/get-started-
 ```bash
 git clone https://github.com/sepenet/cost-management-billing.git
 ```
-- Configure the remote upstream  
-Change directory to cost-management-billing
+- Configure the remote upstream  **Optional**  
+Change directory to cost-management-billing just cloned 
 ```bash
 git remote add upstream https://github.com/sepenet/cost-management-billing.git
 git fetch upstream
@@ -30,6 +30,9 @@ git add --all
 git commit -m "Short Description of Changes Made"
 git push --set-upstream origin <branchname>
 ```
+> [!NOTE]
+> the same can be achieve through the vscode GUI interface  
+> ![](media/how-to-contribute/2020-06-11-15-21-28.png)  
 
 ## Markdown syntax quick tips
 few tips
@@ -50,11 +53,11 @@ this is the 2nd line.
     5. even if "5." is written in the md c. is shown :)
         1. 3rd level
         2. ...
-- **Smart Past** images from the clipboard, just use CTRL+ALT+V  
+- **Smart Past** images from the clipboard, just use CTRL+ALT+V and save it to **<path>/media/<md file name>/<image file name>  
 ![](media/how-to-contribute/2020-06-09-11-20-57.png)
 
 
-### docs.microsoft.com markdown syntax
+### Docs microsoft com markdown syntax
 Reference to the markdown implemented at docs.microsoft.com is described here : https://docs.microsoft.com/en-us/contribute/markdown-reference  
 example 
 > [!NOTE]
