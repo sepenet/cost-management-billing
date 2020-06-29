@@ -31,25 +31,22 @@ ms.author: sepenet
 
 ### 1.1 Why
 
-**Save Money** with Azure reservation.  
-
-Learn how Azure Reservations help you save money by committing to one-year or three-years plans for virtual machines, Azure Blob storage or Azure Data Lake Storage Gen2, SQL Database compute capacity, Azure Cosmos DB throughput, and other Azure resources.  
+Azure Reservations can help you to save money by committing to one-year or three-years plans for virtual machines, Azure Blob storage or Azure Data Lake Storage Gen2, SQL Database compute capacity, Azure Cosmos DB throughput, and other Azure resources.  
 
 The above lines are the exhibit of the official online documentation available [here](https://docs.microsoft.com/en-us/azure/cost-management-billing/reservations/)
 
 > [!NOTE]
->- List of azure workload covered by reservation is available [here](https://docs.microsoft.com/en-us/azure/cost-management-billing/reservations/save-compute-costs-reservations?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Ftoc.json#charges-covered-by-reservation).
->- All reservations, except Azure Databricks, are applied on an **hourly basis**.
->- Azure reservation as a **scope**, scope definition [here](https://docs.microsoft.com/en-us/azure/cost-management-billing/reservations/prepare-buy-reservation#scope-reservations). 
->- Reservation scope can be changed, details [here](https://docs.microsoft.com/en-us/azure/cost-management-billing/reservations/manage-reserved-vm-instance#change-the-reservation-scope).  
-Example: previously assigned VM reservation to resource group can be changed to subscription for the reservation to be used across all the subscription. 
->- Unused reserved capacity doesn't carry over from one hour to next, in other words unused reserved capacity is **lost**.
->- Usage exceeding the reserved quantity is charged using more expensive pay-as-you-go rates.
->- VM reservation is tied to a VM series.  
-Reservation purchased for ES series VMs do not apply to E series VMs, and vice-versa.  
->- VM reservation consumption is subject to ratio when size flexibility is enable, details [here](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/reserved-vm-instance-size-flexibility).  
-**1 CPU VM reservation type is consumed 2 times quicker on a 2 CPUs VM from the same series.** 
->- Software costs not included with Azure Reserved VM Instances, details [here](https://docs.microsoft.com/en-us/azure/cost-management-billing/reservations/reserved-instance-windows-software-costs).
+>- List of azure workload covered by reservation is available [here](https://docs.microsoft.com/en-us/azure/cost-management-billing/reservations/**save-compute-costs-reservations?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Ftoc.json#charges-covered-by-reservation),
+>- All reservations, except Azure Databricks, are applied on an hourly basis,
+>- Azure reservation as a scope, scope definition [here](https://docs.microsoft.com/en-us/azure/cost-management-billing/reservations/prepare-buy-reservation#scope-reservations),
+>- Reservation scope can be changed, details [here](https://docs.microsoft.com/en-us/azure/cost-management-billing/reservations/manage-reserved-vm-instance#change-the-reservation-scope),
+Example: previously assigned VM reservation to resource group can be changed to subscription for the reservation to be used across all the subscription,
+>- Unused reserved capacity doesn't carry over from one hour to next, in other words unused reserved capacity is lost,
+>- Usage exceeding the reserved quantity is charged using more expensive pay-as-you-go rates,
+>- VM reservation is tied to a VM series, 
+Reservation purchased for ES series VMs do not apply to E series VMs, and vice-versa,
+>- VM reservation consumption is subject to ratio when size flexibility is enable, details [here](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/reserved-vm-instance-size-flexibility) - 1 CPU VM reservation type is consumed 2 times quicker on a 2 CPUs VM from the same series,
+>- Software costs not included with Azure Reserved VM Instances, details [here](https://docs.microsoft.com/en-us/azure/cost-management-billing/reservations/reserved-instance-windows-software-costs),
 
 ### 1.2 How to
 
@@ -82,14 +79,10 @@ how to view azure reservation usage can be found [here](https://docs.microsoft.c
 
 #### Pain points and difficulties
 
-- **Charge back** to internal businesses lines.  
+- Charge back to internal businesses lines.  
 In case the azure reservation are bought centrally and assigned to a shared scope subscription, charge back process could be very complex.   
-
-VM Reservation Instance (RI) are assigned randomly to any suitable VM and can flip from one VM to another multiple times during a day.  
-
-Distribution of discount can be then very complex if you want all the lines of businesses to benefit equal discount.  
-
-EG: if you have 3 identicals VMs in 3 subscriptions, and 2 Reservations VMs, on day 1 it could be assigned to VM1 and VM3 and day 2 to VM1 and VM2, and day 3 to again VM1 and VM2
+- VM Reservation Instance (RI) are assigned randomly to any suitable VM and can flip from one VM to another multiple times during a day.  
+- Distribution of discount can be then very complex if you want all the lines of businesses to benefit equal discount. EG: if you have 3 identicals VMs in 3 subscriptions, and 2 Reservations VMs, on day 1 it could be assigned to VM1 and VM3 and day 2 to VM1 and VM2, and day 3 to again VM1 and VM2
 
 ![](media/view-reservations/RI-chargeback-example.png)
 
@@ -106,7 +99,7 @@ EG: if you have 3 identicals VMs in 3 subscriptions, and 2 Reservations VMs, on 
 
 ### 1.4 Measure the impacts
 
-IN PROGRESS
+Use the PowerBI connector "Azure Cost Management" to understand where and how much of a reserved instance (RI) benefit is applied per region, subscription, resource group, or resource. The RI Coverage indicator is particularly interested to provide the ratio between On-Demand and RI coverage.
 
 ## 2. Microsoft workloads : AHUB + Dev&Test subscriptions , SQL : Developer License/Managed Instances
 
