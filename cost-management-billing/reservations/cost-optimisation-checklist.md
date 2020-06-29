@@ -73,16 +73,15 @@ how to view azure reservation usage can be found [here](https://docs.microsoft.c
 
 #### Recommendations and best practices
 
-- VM standardization should be maximized to simplify azure VM reservation adoption. 
-- VM shared scope should used to maximise utilisation, details of scope [here](https://docs.microsoft.com/en-us/azure/cost-management-billing/reservations/prepare-buy-reservation#scope-reservations)
-- When azure reservation are bought centrally, businesses lines should be consulted before buying to get long term visibility and potential decomissionning, replatforming, migration to new application architecture, ...
+- VM standardization should be maximized to simplify azure VM reservation adoption,
+- VM shared scope should used to maximise utilisation, details of scope [here](https://docs.microsoft.com/en-us/azure/cost-management-billing/reservations/prepare-buy-reservation#scope-reservations),
+- When azure reservation are bought centrally, businesses lines should be consulted before buying to get long term visibility and potential decomissionning, replatforming, migration to new application architecture,...
 
 #### Pain points and difficulties
 
-- Charge back to internal businesses lines.  
-In case the azure reservation are bought centrally and assigned to a shared scope subscription, charge back process could be very complex.   
-- VM Reservation Instance (RI) are assigned randomly to any suitable VM and can flip from one VM to another multiple times during a day.  
-- Distribution of discount can be then very complex if you want all the lines of businesses to benefit equal discount. EG: if you have 3 identicals VMs in 3 subscriptions, and 2 Reservations VMs, on day 1 it could be assigned to VM1 and VM3 and day 2 to VM1 and VM2, and day 3 to again VM1 and VM2
+- Charge back to internal businesses lines. In case the azure reservation are bought centrally and assigned to a shared scope subscription, charge back process could be very complex,
+- VM Reservation Instance (RI) are assigned randomly to any suitable VM and can flip from one VM to another multiple times during a day,
+- Distribution of discount can be then very complex if you want all the lines of businesses to benefit equal discount. EG: if you have 3 identicals VMs in 3 subscriptions, and 2 Reservations VMs, on day 1 it could be assigned to VM1 and VM3 and day 2 to VM1 and VM2, and day 3 to again VM1 and VM2.
 
 ![](media/view-reservations/RI-chargeback-example.png)
 
@@ -92,7 +91,7 @@ In case the azure reservation are bought centrally and assigned to a shared scop
 > - How to get it for an individual subscription as a csv file [here](https://docs.microsoft.com/en-us/azure/cost-management-billing/reservations/understand-reserved-instance-usage).
 
 - **50K$ refund rolling limit**: you can refund reservation instance VM to a limit of 50K$ over a 1 year rolling period.  
-- **refund and repurchase** new reservation: the new purchase total should equal or be greater than the returned amount
+- **Refund and repurchase** new reservation: the new purchase total should equal or be greater than the returned amount
 
 > [!NOTE]
 > all the exchange and refund policies information can be found [here](https://docs.microsoft.com/en-us/azure/cost-management-billing/reservations/exchange-and-refund-azure-reservations#cancel-exchange-and-refund-policies). 
@@ -100,6 +99,10 @@ In case the azure reservation are bought centrally and assigned to a shared scop
 ### 1.4 Measure the impacts
 
 Use the PowerBI connector "Azure Cost Management" to understand where and how much of a reserved instance (RI) benefit is applied per region, subscription, resource group, or resource. The RI Coverage indicator is particularly interested to provide the ratio between On-Demand and RI coverage.
+
+More details [here](https://github.com/sepenet/cost-management-billing/blob/master/cost-management-billing/reservations/cost-optimisation-checklist.md)
+
+![](media/cost-optimisation-checklist/ri-drill-down2.png)
 
 ## 2. Microsoft workloads : AHUB + Dev&Test subscriptions , SQL : Developer License/Managed Instances
 
@@ -125,14 +128,12 @@ Several considerations before using Dev/Test offers,
 
 #### SQL Developer and Express Licence
 
-The **SQL Developer and Express Licence** are free edition for SQL Server with a fully featured version of SQL Server software—including all of the features and capabilities of Enterprise Edition.
+The **SQL Developer and Express Licence** are free edition for SQL Server with a fully featured version of SQL Server software including all of the features and capabilities of Enterprise Edition.
 
 Several considerations before using the free edition,
 - The SQL Developer and Express License is restricted for development, test and demonstration purposes only
 - Four cores in the cloud for every one core on-premises for Enterprise edition customers in the General Purpose or Hyperscale service tiers.
 - Support extension for SQL Server 2008 and 2008 R2 workloads to Azure virtual machines is free for 3 years after EOL [https://www.microsoft.com/en-us/cloud-platform/windows-server-2008](https://www.microsoft.com/en-us/cloud-platform/windows-server-2008).
-
-Several considerations before using,
 - Customer own eligible SQL Server and/or Windows Server licenses with active Software Assurance or the equivalent qualifying subscription licenses
 - DTU to vCore conversion is possible, migration scenario [here](https://docs.microsoft.com/en-us/azure/azure-sql/database/migrate-dtu-to-vcore)  
 - As a rule of thumb, every 100 DTUs in the standard tier require at least 1 vCore, and every 125 DTUs in the premium tier require at least 1 vCore. For more information, see https://docs.microsoft.com/en-us/azure/azure-sql/database/  
@@ -142,8 +143,9 @@ Several considerations before using,
 #### Azure Hybrid Benefit
 
 - How to declare it,
-	- For Windows Server [here](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/hybrid-use-benefit-licensing#create-a-vm-with-azure-hybrid-benefit-for-windows-server) 
+    - For Windows Server [here](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/hybrid-use-benefit-licensing#create-a-vm-with-azure-hybrid-benefit-for-windows-server) 
 	- For Azure SQL Database [here](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/sql-database/sql-database-azure-hybrid-benefit.md)
+
 - How to follow it,
     - In the portal with "OS Licenscing benefit" column  
     ![](media/cost-optimisation-checklist/OSLicensingBenefit.png)
@@ -153,26 +155,18 @@ Several considerations before using,
 - How to declare it,
 
     - The enterprise administrator of the EA Enrollment enable the Dev Test offer in the EA portal
-
     - Account Owner only see the EA Dev/Test offer option in the subcriptions lists  
     ![](media/cost-optimisation-checklist/addSubscription.png)
 
 - How to follow it,
     - You can retrieve the offer ID through Azure portal [here](https://azure.microsoft.com/en-us/support/legal/offer-details/)
-
 	- It's not possible to get a subscriptions offer ID through API today [here](https://feedback.azure.com/forums/170030-signup-and-billing/suggestions/36518317-get-offer-id-programmatically-through-powershell)
-
-#### SQL developer and Express License
-
-IN PROGRESS
 
 ### 2.3 Pitfalls
 
 The Azure Hybrid Benefit can be widely used by our customers as long as the considerations are respected. We advice you to "double-check" with the PSS and Licensing Team if the licensing term of the customer is eligible for Hybrid Use.
 
 The Enterprise Dev/Test can be use in moderation or full knowledge because of certain limitations of usages (only for Visual Studio subscribers) and quotas (more lower than EA offer).
-
-The SQL Developer and Express licence --> Voir avec Sébastien
 
 ### 2.4 Measure the impact
 
@@ -187,7 +181,7 @@ For AHB and SQL Developer and Express licenses, we can use the metric "Virtual M
 Although certain application scenarios can result in low utilization by design, you can often save money by managing the size and number of your virtual machines.  
 Advisor advanced evaluation models considers:
 
-- virtual machines for shut-down when P95th of max value of CPU utilization is less than 3% and network utilization is less than 2% over a 7 day period,
+- Virtual machines for shut-down when P95th of max value of CPU utilization is less than 3% and network utilization is less than 2% over a 7 day period,
 
 - Virtual machines are considered for right size when it is possible to fit the current load in a smaller SKU (within the same SKU family) or a smaller number of instance such that the current load doesn’t go over 80% utilization when non-user facing workloads and not above 40% when user-facing workload. Here, the type of workload is determined by analyzing the CPU utilization characteristics of the workload.
 
@@ -240,7 +234,7 @@ Business, application owners/administrators should be consulted to get their poi
 
 ### 3.4 Measure the impact
 
-Cost per resource per month (Azure Cost Management / Azure Graph / Azure Advisor release recommandation)
+Cost per resource per month (Azure Cost Management / Azure Graph / Azure Advisor release recommendation)
 
 ## 4. Terminate zombie resources: Delete unused VMs, Delete unattached storage volumes, Release unattached Elastic IP addresses
 
@@ -249,14 +243,9 @@ Cost per resource per month (Azure Cost Management / Azure Graph / Azure Advisor
 - Zombies are everywhere, consuming resources in every customer's environment.  
 - Zombie VM's are virtual machines that were provisioned and for one reason unintentionally not used. This can be due to stalled or abandoned projects or even incomplete decommissioning procedures. Despite being unused, Zombie VM's continue to eat valuable Compute, Memory, Storage, and even Network resources costing organizations money and exposing unnecessary security risks.
 
-<<<<<<< HEAD
 ### 4.2 How to
 
 - Use Azure Advisor to track unused Public IP addresses or Unattached storage - https://docs.microsoft.com/en-us/azure/advisor/advisor-cost-recommendations $$CDU : +VM and Storage  
-=======
-### How to 
-- Use Azure Advisor to track unused Public IP addresses or Unattached storage - https://docs.microsoft.com/en-us/azure/advisor/advisor-cost-recommendations $$CDUtest2 : +VM and Storage  
->>>>>>> 30c12fb57b79ea3714dab5c38fdcd38ba03b781a
 ![](media/cost-optimisation-checklist/advisorZombie.png)
 
 ### 4.3 Pitfalls
@@ -276,11 +265,10 @@ Figure out the right KPIs (Key Performance Indicators). A single KPI won’t giv
 ### 5.1 Why
 
 This is one of the promises of the Cloud to reduce the costs and optimize the resources. One way is to turn-off resources when not needed. This approach is widely implemented by our customer with a high impact on cost reduction.  
-$$CDU: on parle d'un client en particulier ?
 
 For IAAS, this particularly applies for virtual machines which can be deallocate, then, you will only pay for storage.
 
-For PAAS, most of the servcices can not be stopped except for few of them, $$CDU : on est sur de ça ?
+For PAAS, most of the servcices can not be stopped except for few of them,
 - Data : Synapse Data Analytics, Azure SQL Serverless Db
 - Compute : Functions, Batch, Container Instance (ACI), Cognitive Services
 
@@ -314,12 +302,9 @@ You can use the existing template in Azure Automation as starting point : https:
 With Azure Spot Virtual Machines (Spot VMs), you’ll be able to access unused Azure compute capacity at deep discounts—up to 90 percent compared to pay-as-you-go prices. You pay up to the maximum price that you optionally agree to in advance. Spot VMs are ideal for workloads that can be interrupted, providing scalability while reducing costs.
 
 Savings:  
-60 to 90 % Very dependant on the eviction policy choosen See https://azure.microsoft.com/en-us/pricing/spot/  
-$$CDU : je ne comprends pas car le prix payé correspond surtout au max price lors de l'acquisition
-
-Can come on top of dev/test pricing discount
-
-Prices are fixed on a monthly basis (for now, may change) and billed as VM with the special spot prices.
+- 60 to 90 % Very dependant on the eviction policy choosen See https://azure.microsoft.com/en-us/pricing/spot/  
+- Can come on top of dev/test pricing discount
+- Prices are fixed on a monthly basis (for now, may change) and billed as VM with the special spot prices.
 https://azure.microsoft.com/en-us/pricing/details/virtual-machines/linux/  
 Ex :  
 ![](media/cost-optimisation-checklist/spotInstances.png)
