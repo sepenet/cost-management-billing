@@ -102,7 +102,7 @@ Use the PowerBI connector "Azure Cost Management" to understand where and how mu
 
 More details [here](https://github.com/sepenet/cost-management-billing/blob/master/cost-management-billing/reservations/cost-optimisation-checklist.md)
 
-![](media/cost-optimisation-checklist/ri-drill-down2.png)
+![](media/cost-optimisation-checklist/ri-drill-down3.png)
 
 ## 2. Microsoft workloads : AHUB + Dev&Test subscriptions , SQL : Developer License/Managed Instances
 
