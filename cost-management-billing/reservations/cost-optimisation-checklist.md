@@ -146,12 +146,11 @@ Several considerations before using the free edition,
 
 #### Azure Hybrid Benefit
 
-- How to declare it,
-    - For Windows Server [here](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/hybrid-use-benefit-licensing#create-a-vm-with-azure-hybrid-benefit-for-windows-server) 
-	- For Azure SQL Database [here](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/sql-database/sql-database-azure-hybrid-benefit.md)
+You can declare the Azure Hybrid Hub wih the links below. It can be done during or after the deployment.
+- For Windows Server [here](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/hybrid-use-benefit-licensing#create-a-vm-with-azure-hybrid-benefit-for-windows-server) 
+- For Azure SQL Database [here](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/sql-database/sql-database-azure-hybrid-benefit.md)
 
-- How to follow it,
-    - In the portal with "OS Licenscing benefit" column  
+You can monitor through the Azure portal with "OS Licencing benefit"
     ![](media/cost-optimisation-checklist/OSLicensingBenefit.png)
 
 #### Enterprise Dev/Test
