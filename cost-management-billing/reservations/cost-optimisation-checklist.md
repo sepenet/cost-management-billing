@@ -120,6 +120,8 @@ The **Enterprise Dev/Test Offer** is a way to run their development and testing 
 
 Low rates on specific Azure services (Windows Server billing at the Linux rate, Website on Windows billing at the linux rate, HdInsights on Windows node billing at the linux rate, Logic App Enterprise connection is billing at 50%,etc.)
 
+![](media/cost-optimisation-checklist/devtest.png)
+
 Several considerations before using Dev/Test offers,
 - The Enterprise Dev/Test offer is restricted to dev/test usage only, and only by active Visual Studio subscribers
 - The Enterprise Dev/Test offer is not covered by Service Level Agreements
