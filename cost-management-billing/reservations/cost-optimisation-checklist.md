@@ -122,6 +122,8 @@ Low rates on specific Azure services (Windows Server billing at the Linux rate, 
 
 ![](media/cost-optimisation-checklist/devTest.png)
 
+![](media/cost-optimisation-checklist/devTest2.png)
+
 Several considerations before using Dev/Test offers,
 - The Enterprise Dev/Test offer is restricted to dev/test usage only, and only by active Visual Studio subscribers
 - The Enterprise Dev/Test offer is not covered by Service Level Agreements
