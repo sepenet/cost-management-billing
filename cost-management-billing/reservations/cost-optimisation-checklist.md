@@ -151,7 +151,8 @@ You can declare the Azure Hybrid Hub wih the links below. It can be done during 
 - For Azure SQL Database [here](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/sql-database/sql-database-azure-hybrid-benefit.md)
 
 You can monitor through the Azure portal with "OS Licencing benefit"
-    ![](media/cost-optimisation-checklist/OSLicensingBenefit.png)
+
+![](media/cost-optimisation-checklist/OSLicensingBenefit.png)
 
 #### Enterprise Dev/Test
 
